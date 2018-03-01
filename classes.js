@@ -181,10 +181,14 @@ class Machine {
   }
 
   reboot(){
-    function rebootComplete(){};
-    this.wear_and_tear_count -= 10;
-    this.needs_reboot = false;
-    return rebootComplete;
+    return () => {
+      this.wear_and_tear_count -= 10;
+      this.needs_reboot =false;
+    }
+    // function rebootComplete(){};
+    // this.wear_and_tear_count -= 10;
+    // this.needs_reboot = false;
+    // return rebootComplete;
   }
 }
   
